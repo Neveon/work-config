@@ -1,6 +1,7 @@
 local fn = vim.fn
 
 -- Automatically install packer
+-- ~/./local/share/nvim/site is where plugins are
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
@@ -24,6 +25,7 @@ vim.cmd [[
 ]]
 
 -- Use a protected call so we don't error out on first use
+-- Same as: local packer = require("packer")
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
@@ -46,6 +48,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- Colorschemes
+<<<<<<< HEAD
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
 
@@ -60,6 +63,11 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+=======
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/darkplus.nvim"
+
+>>>>>>> 04-colorscheme
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
