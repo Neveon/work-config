@@ -4,9 +4,9 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "" }, -- List of parsers to ignore installing
+  ensure_installed = "all",
+  sync_install = false, 
+  ignore_install = { "php" }, -- List of parsers to ignore installing (php is not arm64)
   autopairs = {
     enable = true,
   },
@@ -18,6 +18,6 @@ configs.setup {
   indent = { enable = true, disable = { "yaml" } },
   context_commentstring = {
     enable = true,
-    enable_autocmd = false,
+    enable_autocmd = false
   },
 }
