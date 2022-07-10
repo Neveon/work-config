@@ -1,5 +1,15 @@
 local fn = vim.fn
 
+-- To shutup the offset encoding warning when using github copilot
+local notify_filter = vim.notify
+vim.notify = function(msg, ...)
+  if msg:match "warning: multiple different client offset_encodings detected for buffer, this is not supported yet" then
+    return
+  end
+
+  notify_filter(msg, ...)
+end
+
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
