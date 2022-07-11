@@ -10,6 +10,16 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
+
+-- Insert --
+
 -- Github Copilot
 vim.g.copilot_no_tab_map = true
 -- vim.g.copilot_assume_mapped = true
@@ -28,14 +38,6 @@ vim.g.copilot_filetypes = {
   ["go"] = true,
   ["python"] = true,
 }
-
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
 
 -- Normal --
 -- Better window navigation
@@ -59,10 +61,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-
--- Insert --
--- Press jk fast to enter
--- keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
