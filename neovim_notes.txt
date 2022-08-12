@@ -1,0 +1,68 @@
+-----How to get neovim to work for C/C++ -----
+https://jdhao.github.io/2020/04/19/nvim_cpp_and_c_completion/
+
+
+-----Neovim from Scratch-----
+https://github.com/LunarVim/Neovim-from-scratch
+
+
+
+gx -> opens url link (that is highlighted?).
+
+In visual mode (capital V for whole lines):
+  - we can tab over multiple lines with > or <
+  - move highlighted text up/down with ALT-j and ALT-k
+
+  
+-----Neovim Completion-----
+
+As you write there will be autocomplete miniwindow under your text.
+This is the following commands you can take.
+
+When a ghost text comes up, <CR> will autocomplete it.
+
+Ctrl-b => Scroll down the documentation
+Ctrl-f => Scroll up the documentation
+Ctrl-e => remove suggested popup completions
+Tab => scroll down through completions
+shift-Tab => scroll up through completions
+  
+gl -> Get detail of problems/errors or info (LspInfo).
+  
+Naviagte buffers with Shift-l or Shift-r
+*Buffers are created from editing other files using such actions as below*
+
+<leader>e -> File explorer
+  % -> Create a new file in the directory.
+
+
+
+-----Telescope----- 
+  - Good for finding what you already know the name of
+
+<leader>f -> Telescope find files related to what you type.
+gd -> (Telescope) Go to the definition of the variable under the cursor.
+gr -> (Telescope) Go to the references of the variable under the cursor.
+
+
+-----Gitsigns-----
+
+:Gitsigns next_hunk => This command moves to the next hunk of changes in the file and also gives you the number of changes present.
+:Gitsigns preview_hunk => Popup shows you the changes made in the hunk the cursor is currently at.
+:Gitsigns blame_line => Popup shows short commit hash, user who made and time of change and commit comments where the cursor is at.
+(All other commands can be found in :Gitsigns)
+
+
+-----Github Copilot-----
+
+:Copilot status => lets us know any issues with Copilot
+
+Writing descriptions in comments will outline what copilot will write.
+After the comment, code up what you think the solution will be, remove neovim autocomplete with crl-e
+and ghost text will autocomplete the solution.
+Ctrl-a will autocomplete using the ghost text.
+
+
+-----Nvim Tree-----
+
+https://github.com/kyazdani42/nvim-tree.lua
